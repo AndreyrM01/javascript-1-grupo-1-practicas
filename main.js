@@ -1,85 +1,86 @@
-//Variables
-numeros([25, 128, 80, 14, 9, 127])
-let pali = [];
-const array = [
-  [1,0,0], 
-  [0,1,1],
-  [0,1,0]];
-let zero = 0;
-let repetir = [];
-let piramide = 10
+var option = parseInt(prompt("Ingrese un número: "));
+alert("EL factoriales " + factorial(option));
 
-//Ejercicio 1
-function numeros(arr) {
-  let max = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > max) {
-      max = arr[i];
-    }
+var randomNumber = 13;
+var oportunidad = 0;
+
+//Primer ejercicio
+function factorial(option) {
+  if(option <= 1){
+    return 1;
   }
-  console.log(max);
-
+  else{
+    return option * factorial(option - 1);
+  }
 }
 
+factorial()
 
-//EJERCICIO 2
+//Segundo ejercicio
+function bisiestro() {
+  var año = prompt("Ingrese un año: ")
 
-function palindromo(string) {
-  for (let i = string.length - 1; i >= 0; i--) {
-    pali.push(string[i]);
-  }
-  const revert = pali.join("");
-  if (revert === string) {
-    return "Si es palindromo";
+  if(((año % 4 == 0) && (año % 100 != 0)) || año % 400 == 0){
+    alert("El año " + año + " es bisiesto")
   } else {
-    return "No es palindromo";
+      alert("El año " +  año + " no es bisiesto")
   }
 }
-console.log(palindromo("reconocer"));
-// console.log(palindromo("profesor"));
 
+bisiestro()
 
-//EJERCICIO 3
+//Tercer ejercicio
+let text = prompt("Introduce un texto: ");
+let ch = prompt("Introduce un caracter: ");
+let contador = 0;
 
-function cero(){
-  for (let i = 0; i < array.length; i++) {
-    for (let j = 0; j < array[i].length; j++) {
-      if (array[i][j] == 0){
-        zero ++;
+for (let i = 0; i < text.length; i++) {
+  const element = text[i];
+  if(element == ch){
+    contador++;
+  }
+}
+console.log("El caracter " + ch + " aparece " + contador + " veces en el texto");
+
+//Cuarto ejercicio
+function randomNum (){
+  while (oportunidad < 100){
+    var numero = prompt("Adivina el numero /del 1 al 100/")
+    oportunidad++;
+    if (number == randomNumber){
+      alert("¡Acertaste!")
+      break;
+    } 
+    else { 
+      if (number > randomNumber){
+        alert("¡Ups!, el numero es mas bajo");
+      }
+      else {
+        alert("Mas arriba ¡Bro!");
       }
     }
   }
-  return 'La cantidad de ceros es: ' +zero
-  }
+}
+
+randomNumber()
+
+//Quinto ejercicio
+function espaciado() {
+  const phrase = "May the force be with you"
+  let juntar
   
-  console.log(cero())
-
-
- //EJERCICIO 4
-
-function again(num){
-  for (let i = 0; i < num.length; i++) {
-    if (num[i + 1] === num[i]) {
-      repetir.push(num[i]);   
-    }  
-  } 
-    if(repetir.length >= 1){
-      return repetir;
-    }
-    else{
-      return 'No se encontraron números repetidos en la lista de números recibida'
-    }
-  }
-  // console.log(again([ 1, 2, 3, 3, 3, 4, 4, 5, 6]))
-  console.log(again([ 1, 2, 3, 4, 5, 6, 7, 8, 9]))
-
-
-  //EJERCICIO 5
-
-for(let i = 0; i < piramide; i++) {
-  let elemento = '';
-for(let j = 1 ; j < i; j++){
-  elemento += '* '
+  juntar = phrase.split(" ").join("")
+  console.log(juntar);
 }
-console.log(elemento)
+
+spaces();
+
+//Main
+function main(){
+  factorial();
+  bisiestro();;
+  randomNum()
+  espaciado();
 }
+
+main();
