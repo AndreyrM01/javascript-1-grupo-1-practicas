@@ -16,6 +16,11 @@ function primo(numero) {
   }
   
   primo(56);
+
+  //Escriba un programa que permita encontrar las soluciones de una ecuación cuadrática:
+  //Implemente detección de errores para verificar que el usuario introduzca valores correctos
+  //para a, b y c. Además, debe detectarse el caso en el que la ecuación no tiene soluciones
+  //(cuando b ac 0 ) y notificarlo al usuario.
   
   var variable1 = prompt ('Ingrese el valor a ');
   var variable2 = prompt ('Ingrese el valor b ');
@@ -53,6 +58,6 @@ function primo(numero) {
   for (let i = 1; i <= 100; i++) {
     console.log(i);
     if (1 % 10 === 0){
-      console.log('');
+      console.log('----');
     }
   }
